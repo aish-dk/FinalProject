@@ -67,6 +67,14 @@ export default function ShowPosts() {
         <div className="w-full overflow-x-hidden bg-gray-100 min-h-screen pb-10">
           <div className="w-full flex justify-around px-16 top-nav paddingleft0 widthauto remove-flex">
             <div className="flex gap-x-5 flex-wrap gap-y-3 mt-3 ">
+              <button
+                className="border border-gray-300 text-sm p-1"
+                onClick={() => {
+                  setSelectedCategory("");
+                }}
+              >
+                All Categories
+              </button>
               {post.categories.map((category) => {
                 return (
                   <button

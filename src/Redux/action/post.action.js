@@ -82,7 +82,9 @@ export const addNewCategory = (newCategory) => async (dispatch) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((data) => data.json());
+    })
+      .then((data) => data.json())
+      .then(dispatch(fetchCategories()));
   } catch (err) {
     console.log(err);
   }

@@ -1,18 +1,7 @@
 import { CREATE_POST, FETCH_POST, FETCH_CATEGORIES } from "../actionType";
 const initialState = {
   post: [],
-  categories: [
-    // "Technology",
-    // "Lifestyle",
-    // "Health",
-    // "Science",
-    // "Sports",
-    // "Literature",
-    // "Music",
-    // "History",
-    // "Relationships",
-    // "Politics",
-  ],
+  categories: [],
 };
 export const postReducer = (state = initialState, action) => {
   switch (action.type) {

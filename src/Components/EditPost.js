@@ -41,7 +41,6 @@ export default function EditPost() {
     fetchThePost();
   }, []);
   function setElements() {
-    console.log(post);
     setTitle(posted.title);
     setBody(posted.Body);
     setImageUrl(posted.image);

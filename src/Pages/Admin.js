@@ -63,7 +63,7 @@ export default function Admin() {
                     </h1>
                   </Link>
                   <br />
-                  <Link to="newpost">
+                  <Link to="/Admin/newpost">
                     <h1 className="mb-2 mt-2  inline-flex ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ export default function Admin() {
                 />
               </svg>
             </Link>
-            <Link to="newpost">
+            <Link to="/Admin/newpost">
               <h1 className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
