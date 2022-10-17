@@ -20,7 +20,6 @@ function App() {
         <Route path="/" element={appContext.auth ? <Admin /> : <Home />}>
           <Route index element={appContext.auth ? <ShowPosts /> : <Home />} />
         </Route>
-
         <Route path="singlepost/:id" element={<SinglePost />} />
         <Route
           path="/Admin"

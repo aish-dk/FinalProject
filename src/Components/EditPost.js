@@ -4,6 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useDispatch, useSelector } from "react-redux";
 import { editPostToDB } from "../Redux/action/post.action";
+import toast from "react-hot-toast";
 
 export default function EditPost() {
   const current = new Date();
@@ -63,6 +64,7 @@ export default function EditPost() {
       Body: body,
     };
     dispatch(editPostToDB(id, newPost));
+    toast.success("Post Edited");
     navigate("/Admin/allposts");
   }
   function handleCheckBoxChange(position) {

@@ -27,8 +27,9 @@ export default function MyComponent() {
     new Array(post.categories.length).fill(false)
   );
   let navigate = useNavigate();
-  function createNewPost() {
-    if (title && body && summary) {
+  function createNewPost(event) {
+    event.preventDefault();
+    if (body) {
       let newCategory = setThePostCategory();
       let newPost = {
         title: title,
@@ -44,10 +45,9 @@ export default function MyComponent() {
       toast.success("Post Added Successfully");
       navigate("/Admin");
     } else {
-      toast.error("Please fill out all fields");
+      toast.error("Please fill the content field");
     }
   }
-
   function handleCheckBoxChange(position) {
     let newCheckedState = checkedState.map((element, index) => {
       return position === index ? !element : element;
@@ -75,11 +75,26 @@ export default function MyComponent() {
   }, []);
   return (
     <div className="overflow-x-hidden pb-20">
-      <form
-        onSubmit={() => {
-          createNewPost();
-        }}
-      >
+      <form onSubmit={createNewPost}>
+        <div className=" w-full pb-6 border-2 text-white bg-slate-900  ">
+          <h1 className=" pl-3 pt-6 text-2xl inline-flex">
+            Create Post{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-5 ml-1 mt-2 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </h1>
+        </div>
         <div className="flex justify-start gap-x-6 flex-wrap gap-y-3 pl-3 mt-3">
           {post.categories.map((category, index) => {
             return (
@@ -114,6 +129,7 @@ export default function MyComponent() {
                 placeholder="Enter new category"
               ></input>
               <button
+                type="button"
                 onClick={() => {
                   setNewCategory();
                 }}
@@ -127,13 +143,13 @@ export default function MyComponent() {
 
         <h1 className="font-semibold pl-3 font-serif text-xl mt-5">Title</h1>
         <input
+          required
           value={title}
           onChange={(event) => {
             setTitle(event.target.value);
           }}
           className=" w-full border border-1 h-14 mb-5 outline-none pl-3"
           placeholder="Enter the title here"
-          required
         ></input>
         <h1 className="font-semibold pl-3  mt-5 font-serif text-xl">Content</h1>
         <ReactQuill theme="snow" value={body} onChange={setBody} />
@@ -150,13 +166,13 @@ export default function MyComponent() {
         ></input>
         <h1 className="font-semibold pl-3 text-xl font-serif  mt-5">Summary</h1>
         <input
-          required
           value={summary}
           onChange={(event) => {
             setSummary(event.target.value);
           }}
           className=" w-full border border-1 h-14 mt-2 outline-none pl-3"
           placeholder="Summary"
+          required
         ></input>
         <div className=" ml-96 absolute right-0 mr-4 pl-3">
           <button

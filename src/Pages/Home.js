@@ -1,14 +1,10 @@
 import React, { useContext, useState } from "react";
-import AppContext from "../Context/AppContext";
-import doodle from "../images/doodle.png";
 import ShowPosts from "../Components/ShowPosts";
 import arrowdown from "../images/arrowdown.gif";
 import gify from "../images/giphy.gif";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 export default function Home() {
   let navigate = useNavigate();
-  let appContext = useContext(AppContext);
-  let [buttonClicked, setButtonClicked] = useState(false);
   return (
     <div>
       <div className=" bgcolor min-h-screen text-white flex  gap-x-20 justify-between wrapup ">
@@ -20,11 +16,10 @@ export default function Home() {
             {" "}
             Be Nerdy, Stay Wordy
           </p>
-          <p className="pl-28 mt-5 para-main">Login to Create your Posts </p>
+          <p className="pl-28 mt-5 para-main">Login to Create your Blogs </p>
           <div className="para-main flex gap-x-10 ">
             <button
               onClick={() => {
-                setButtonClicked(true);
                 navigate("/login");
               }}
               className="ml-28 bg-white w-32 p-3 mt-10 h-16 text-black buttonsign rounded-2xl"

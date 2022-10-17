@@ -1,12 +1,10 @@
-import { CREATE_POST, FETCH_POST, FETCH_CATEGORIES } from "../actionType";
+import { FETCH_POST, FETCH_CATEGORIES } from "../actionType";
 const initialState = {
   post: [],
   categories: [],
 };
 export const postReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CREATE_POST:
-      return state;
     case FETCH_POST:
       return {
         ...state,

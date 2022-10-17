@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import AppContext from "../Context/AppContext";
-import categorypic from "../images/category.png";
 import bloglogo from "../images/blogwiz.png";
 
 export default function Admin() {
