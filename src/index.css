@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700;8..144,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+.mont{
+    font-family: 'Montserrat', sans-serif;
+
+}
+.roboto{
+    font-family: 'Roboto Flex', sans-serif;
+}
+.bgcolor{
+    background-color: #292929;
+}
+.bgimage{
+    clip-path: polygon(28% 0, 100% 0, 100% 94%, 0 100%);
+
+}
+h6{
+    text-align: center;
+}
+h1{
+    font-weight: bolder;
+}
+.center {
+    align-items: center;
+  }
+.semi{
+    font-weight:700;
+}
+.loginpage-bg{
+    clip-path: polygon(0 0, 64% 0, 100% 100%, 0% 100%);
+}
+.editorht{
+    min-height: 400px;
+}
+.maxwidth{
+    max-width: 20%;
+}
+.marginleft-20{
+    margin-left: 20%;
+}
+.maxwidth-80{
+    max-width: 80%;
+}
+
+.animatedbg{
+    
+        margin:0;
+        padding:0;
+        font-family:"arial",heletica,sans-serif;
+        font-size:12px;
+        background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+        -webkit-animation: 10s linear 0s normal none infinite animate;
+        -moz-animation: 10s linear 0s normal none infinite animate;
+        -ms-animation: 10s linear 0s normal none infinite animate;
+        -o-animation: 10s linear 0s normal none infinite animate;
+        animation: 10s linear 0s normal none infinite animate;
+     
+    }
+     
+    @-webkit-keyframes animate {
+        from {background-position:0 0;}
+        to {background-position: 500px 0;}
+    }
+     
+    @-moz-keyframes animate {
+        from {background-position:0 0;}
+        to {background-position: 500px 0;}
+    }
+     
+    @-ms-keyframes animate {
+        from {background-position:0 0;}
+        to {background-position: 500px 0;}
+    }
+     
+    @-o-keyframes animate {
+        from {background-position:0 0;}
+        to {background-position: 500px 0;}
+    }
+     
+    @keyframes animate {
+        from {background-position:0 0;}
+        to {background-position: 500px 0;}
+    }
+@media screen and (max-width:1500px){
+    .mobile-size{
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .doodly{
+        display: none;
+    }
+    .main-heading{
+        font-size: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+    }
+    .second-heading{
+        font-size: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .para-main{
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 300px;
+    }
+    .buttonsign{
+        margin-left: 0px;
+    }
+    .wrapup{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 20px;
+        
+    }
+}
+@media screen and (max-width:850px){
+    .searchbar-width-auto{
+        width:auto;
+    }
+    .remove-flex{
+        display: block;
+
+    }
+    .position-searchicon{
+        position: relative;
+        top:0
+    }
+}
+@media screen and (max-width:500px) {
+   .normal-size{display:none}
+   .outlet-size{margin-left: 0;}
+   .mobile-size{display: flex;}
+   .top-nav{display: block;}
+    .widthauto{width:auto}
+    .position-searchicon{
+        position: relative;
+        top: 0;
+        
+    }
+    .paddingleft0{
+        padding-left: 0;
+    }
+    .marginleft0{
+        margin-left: 0;
+        padding: 0;
+    }
+    .margintop2{
+        margin-top:10px;
+    }
+}

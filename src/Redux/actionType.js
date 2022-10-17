@@ -1,0 +1,4 @@
+export const CREATE_POST = "CREATE_POST";
+export const FETCH_POST = "FETCH_POST";
+export const ADD_CATEGORY = "ADD_CATEGORY";
+export const FETCH_CATEGORIES = "FETCH_CATEGORIES";
