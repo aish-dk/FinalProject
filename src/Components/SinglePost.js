@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../Context/AppContext";
+import toast from "react-hot-toast";
 
 export default function SinglePost() {
   let { id } = useParams();
@@ -21,9 +22,14 @@ export default function SinglePost() {
   let navigate = useNavigate();
   let { posters } = useSelector((state) => state);
   function deletePost() {
-    dispatch(deletePostFromDB(id, navigate));
-    dispatch(fetchPostFromDB());
-    navigate("/Admin/allposts");
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      dispatch(deletePostFromDB(id, navigate));
+      toast.error("Post Deleted");
+      dispatch(fetchPostFromDB());
+      navigate("/Admin/allposts");
+    } else {
+      toast.error("Post not deleted!");
+    }
   }
   let url = "http://localhost:3000/post/";
 
